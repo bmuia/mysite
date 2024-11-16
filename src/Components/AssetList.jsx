@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import data from './data';
+import { useNavigate } from 'react-router-dom';
+import data from './data'; 
 import AssetTable from './AssetTable';
 import AssetForm from './AssetForm';
 
 const AssetList = () => {
+  const navigate = useNavigate(); 
   const [assets, setAssets] = useState(data);
   const [showForm, setShowForm] = useState(false);
   const [currentAsset, setCurrentAsset] = useState(null);
@@ -73,6 +75,10 @@ const AssetList = () => {
     resetForm();
   };
 
+  const handleBackToAdvert = () => {
+    navigate('/'); 
+  };
+
   return (
     <div className="container py-5">
       <h2 className="text-center mb-4">Asset and Liabilities Overview</h2>
@@ -81,7 +87,13 @@ const AssetList = () => {
         <div className="alert alert-success text-center">{successMessage}</div>
       )}
 
-      {/* Asset Tables */}
+      <button 
+        className="btn btn-secondary mb-4" 
+        onClick={handleBackToAdvert}
+      >
+        Back to Advert
+      </button>
+
       <AssetTable
         assets={nonCurrentAssets}
         onEdit={openEditForm}
@@ -107,7 +119,6 @@ const AssetList = () => {
         category="Liabilities"
       />
 
-      {/* Show the form for update */}
       {showForm && (
         <AssetForm
           newAsset={newAsset}

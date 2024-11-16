@@ -5,7 +5,7 @@ const AssetForm = ({ newAsset, handleInputChange, handleSubmit, handleCancel, is
     <h3 className="text-center">{isEditing ? 'Update Asset' : 'Add Asset'}</h3>
     <form onSubmit={handleSubmit}>
       <div className="row">
-        {/* ID Field */}
+
         <div className="col-12">
           <div className="mb-3">
             <label htmlFor="id" className="form-label">ID</label>
@@ -36,7 +36,6 @@ const AssetForm = ({ newAsset, handleInputChange, handleSubmit, handleCancel, is
           </div>
         </div>
 
-        {/* Cost Field */}
         <div className="col-12 col-md-6">
           <div className="mb-3">
             <label htmlFor="cost" className="form-label">Cost</label>
@@ -51,7 +50,6 @@ const AssetForm = ({ newAsset, handleInputChange, handleSubmit, handleCancel, is
           </div>
         </div>
 
-        {/* Accumulated Depreciation Field */}
         <div className="col-12 col-md-6">
           <div className="mb-3">
             <label htmlFor="Acc.Depreciation" className="form-label">Accumulated Depreciation</label>
@@ -66,7 +64,6 @@ const AssetForm = ({ newAsset, handleInputChange, handleSubmit, handleCancel, is
           </div>
         </div>
 
-        {/* Net Book Value Field */}
         <div className="col-12 col-md-6">
           <div className="mb-3">
             <label htmlFor="NBV" className="form-label">Net Book Value (NBV)</label>
