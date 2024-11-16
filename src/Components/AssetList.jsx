@@ -119,14 +119,23 @@ const AssetList = () => {
         category="Liabilities"
       />
 
+      {/* Modal Overlay (Dimmed Background) */}
       {showForm && (
-        <AssetForm
-          newAsset={newAsset}
-          handleInputChange={handleInputChange}
-          handleSubmit={handleSubmit}
-          handleCancel={handleCancel}
-          isEditing={isEditing}
-        />
+        <>
+          <div 
+            className="position-fixed top-0 start-0 w-100 h-100 bg-dark opacity-50" 
+            style={{ zIndex: 999 }} 
+          />
+          <div className="d-flex justify-content-center align-items-center position-fixed top-50 start-50 translate-middle" style={{ zIndex: 1000 }}>
+            <AssetForm
+              newAsset={newAsset}
+              handleInputChange={handleInputChange}
+              handleSubmit={handleSubmit}
+              handleCancel={handleCancel}
+              isEditing={isEditing}
+            />
+          </div>
+        </>
       )}
     </div>
   );
