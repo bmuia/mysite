@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import data from './data'; 
+import data from './Data'; 
 import AssetTable from './AssetTable';
 import AssetForm from './AssetForm';
 
